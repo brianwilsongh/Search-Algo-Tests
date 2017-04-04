@@ -12,10 +12,12 @@ public final class Quicksort {
 
 		//member array is set equal to input array
 		array = inputArray;
+		int arrayLength = array.length;
+		
 		long startTime = System.nanoTime();
 		
 		//do the actual sort
-		doQuicksort(0, array.length - 1);
+		doQuicksort(0, arrayLength - 1);
 		
 		long endTime = System.nanoTime() - startTime;
 		System.out.println("Quick Sort runtime (ns) = " + endTime);
