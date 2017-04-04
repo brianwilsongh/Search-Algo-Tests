@@ -1,4 +1,3 @@
-import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -26,6 +25,7 @@ public class Algorithms {
 		int[] bubbleArray = testArray;
 		int[] selectionArray = testArray;
 		int[] insertionArray = testArray;
+		int[] quickArray = testArray;
 		
 		bubbleArray = bubbleSort(bubbleArray);
 		System.out.println("Bubble Sort:");
@@ -46,6 +46,14 @@ public class Algorithms {
 		insertionArray = insertionSort(insertionArray);
 		System.out.println("Insertion Sort");
 		for (int value: insertionArray){
+			System.out.print(value + " ");
+		}
+		
+		System.out.println("\n-----------------");
+		
+		Quicksort.run(quickArray);
+		System.out.println("Quick Sort");
+		for (int value: quickArray){
 			System.out.print(value + " ");
 		}
 		
