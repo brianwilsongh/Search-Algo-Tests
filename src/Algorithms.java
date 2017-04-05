@@ -35,7 +35,7 @@ public class Algorithms {
 		
 
 		bubbleArray = bubbleSort(bubbleArray);
-		System.out.println("Bubble Sort:");
+		System.out.println("Bubble Sort [Best: O(n), Worst: O(n^2)]");
 		if (displayOutput) {
 			for (int value : bubbleArray) {
 				System.out.print(value + " ");
@@ -45,7 +45,7 @@ public class Algorithms {
 		System.out.println("\n-----------------");
 
 		selectionArray = selectionSort(selectionArray);
-		System.out.println("Selection Sort Output:");
+		System.out.println("Selection Sort [Best/Worst: O(n^2)]");
 		if (displayOutput) {
 			for (int value : selectionArray) {
 				System.out.print(value + " ");
@@ -55,7 +55,7 @@ public class Algorithms {
 		System.out.println("\n-----------------");
 
 		insertionArray = insertionSort(insertionArray);
-		System.out.println("Insertion Sort Output");
+		System.out.println("Insertion Sort [Best: O(n), Worst: O(n^2)]");
 		if (displayOutput) {
 			for (int value : insertionArray) {
 				System.out.print(value + " ");
@@ -65,7 +65,7 @@ public class Algorithms {
 		System.out.println("\n-----------------");
 
 		Quicksort.run(quickArray);
-		System.out.println("Quick Sort Output");
+		System.out.println("Quick Sort [Best/Avg: O(n log n), Worst: O(n^2)]");
 		if (displayOutput) {
 			for (int value : quickArray) {
 				System.out.print(value + " ");
@@ -75,7 +75,7 @@ public class Algorithms {
 		System.out.println("\n-----------------");
 
 		Mergesort.run(mergeArray);
-		System.out.println("Merge Sort Output");
+		System.out.println("Merge Sort [Best/Avg/Worst: O(n log n)]");
 		if (displayOutput) {
 			for (int value : mergeArray) {
 				System.out.print(value + " ");
