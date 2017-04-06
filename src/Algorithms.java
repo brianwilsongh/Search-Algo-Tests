@@ -15,7 +15,8 @@ public class Algorithms {
 		System.out.println("Display sorted arrays onto screen? ('true' or 'false')");
 		displayOutput = scanner.nextBoolean();
 		System.out.println("-~-~-~(╯ಠ_ರೃ)╯︵ ┻━┻ LET'S DO THIS! \n");
-		// END INPUT, user has defined size of array and range for values
+		scanner.close();
+		// END INPUT, closer scanner now that user has defined size of array and range for values
 
 		int[] testArray = new int[lengthOfTestArray];
 		for (int idx = 0; idx < testArray.length; idx++) {
@@ -25,13 +26,12 @@ public class Algorithms {
 		}
 
 		// create copies for each of the sorting algorithms
-		int testLength = testArray.length;
-		
 		int[] bubbleArray = testArray.clone();
 		int[] selectionArray = testArray.clone();
 		int[] insertionArray = testArray.clone();
 		int[] quickArray = testArray.clone();
 		int[] mergeArray = testArray.clone();
+		int[] heapArray = testArray.clone();
 		
 
 		bubbleArray = bubbleSort(bubbleArray);
@@ -81,6 +81,16 @@ public class Algorithms {
 				System.out.print(value + " ");
 			}
 		}
+		
+		System.out.println("\n-----------------");
+
+		Heapsort.run(heapArray);
+		System.out.println("Heap Sort [Best/Avg/Worst: O(n log n)]");
+		if (displayOutput) {
+			for (int value : heapArray) {
+				System.out.print(value + " ");
+			}
+		}
 
 	}
 
@@ -117,8 +127,7 @@ public class Algorithms {
 
 		int arrayLength = array.length;
 
-		for (int idx = 0; idx < array.length; idx++) {
-			int lastMinimum = 0;
+		for (int idx = 0; idx < arrayLength; idx++) {
 			int lastMinimumIndex = 0;
 
 			for (int innerIdx = idx; innerIdx < array.length; innerIdx++) {

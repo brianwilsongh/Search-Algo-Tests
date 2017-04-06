@@ -1,10 +1,6 @@
 
 public final class Quicksort {
 	private static int[] array;
-	
-	private static void Quicksort(){
-		//empty constructor
-	}
 
 	
 	public static void run(int[] inputArray) {
