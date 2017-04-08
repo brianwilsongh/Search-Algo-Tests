@@ -16,7 +16,7 @@ public final class Quicksort {
 		doQuicksort(0, arrayLength - 1);
 		
 		long endTime = System.nanoTime() - startTime;
-		System.out.println("Quick Sort runtime (ns) = " + endTime);
+		System.out.println("Quick Sort [Best/Avg: O(n log n), Worst: O(n^2)] runtime (ns) = " + endTime);
 		
 	}
 

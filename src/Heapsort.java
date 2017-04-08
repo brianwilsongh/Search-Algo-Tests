@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 
 public final class Heapsort {
 	static int[] heapArray;
@@ -28,7 +28,7 @@ public final class Heapsort {
 
 		// end the timer, record/print
 		long endTime = System.nanoTime() - startTime;
-		System.out.println("Heap Sort runtime (ns) = " + endTime);
+		System.out.println("Heap Sort [Best/Avg/Worst: O(n log n)] runtime (ns) = " + endTime);
 
 	}
 

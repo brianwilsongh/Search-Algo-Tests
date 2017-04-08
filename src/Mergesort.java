@@ -14,7 +14,7 @@ public final class Mergesort {
 		mergeSort(array, 0, arrayLength - 1);
 		
 		long endTime = System.nanoTime() - startTime;
-		System.out.println("Merge Sort runtime (ns) = " + endTime);
+		System.out.println("Merge Sort [Best/Avg/Worst: O(n log n)] runtime (ns) = " + endTime);
 		
 	}
 	

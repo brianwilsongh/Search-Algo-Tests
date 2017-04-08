@@ -16,7 +16,8 @@ public class Algorithms {
 		displayOutput = scanner.nextBoolean();
 		System.out.println("-~-~-~(╯ಠ_ರೃ)╯︵ ┻━┻ LET'S DO THIS! \n");
 		scanner.close();
-		// END INPUT, closer scanner now that user has defined size of array and range for values
+		// END INPUT, closer scanner now that user has defined size of array and
+		// range for values
 
 		int[] testArray = new int[lengthOfTestArray];
 		for (int idx = 0; idx < testArray.length; idx++) {
@@ -32,10 +33,10 @@ public class Algorithms {
 		int[] quickArray = testArray.clone();
 		int[] mergeArray = testArray.clone();
 		int[] heapArray = testArray.clone();
-		
+		int[] radixArray = testArray.clone();
+		int[] radixArrayWithMax = testArray.clone();
 
 		bubbleArray = bubbleSort(bubbleArray);
-		System.out.println("Bubble Sort [Best: O(n), Worst: O(n^2)]");
 		if (displayOutput) {
 			for (int value : bubbleArray) {
 				System.out.print(value + " ");
@@ -43,9 +44,13 @@ public class Algorithms {
 		}
 
 		System.out.println("\n-----------------");
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			Thread.currentThread().interrupt();
+		}
 
 		selectionArray = selectionSort(selectionArray);
-		System.out.println("Selection Sort [Best/Worst: O(n^2)]");
 		if (displayOutput) {
 			for (int value : selectionArray) {
 				System.out.print(value + " ");
@@ -55,7 +60,6 @@ public class Algorithms {
 		System.out.println("\n-----------------");
 
 		insertionArray = insertionSort(insertionArray);
-		System.out.println("Insertion Sort [Best: O(n), Worst: O(n^2)]");
 		if (displayOutput) {
 			for (int value : insertionArray) {
 				System.out.print(value + " ");
@@ -65,7 +69,6 @@ public class Algorithms {
 		System.out.println("\n-----------------");
 
 		Quicksort.run(quickArray);
-		System.out.println("Quick Sort [Best/Avg: O(n log n), Worst: O(n^2)]");
 		if (displayOutput) {
 			for (int value : quickArray) {
 				System.out.print(value + " ");
@@ -75,23 +78,37 @@ public class Algorithms {
 		System.out.println("\n-----------------");
 
 		Mergesort.run(mergeArray);
-		System.out.println("Merge Sort [Best/Avg/Worst: O(n log n)]");
 		if (displayOutput) {
 			for (int value : mergeArray) {
 				System.out.print(value + " ");
 			}
 		}
-		
+
 		System.out.println("\n-----------------");
 
 		Heapsort.run(heapArray);
-		System.out.println("Heap Sort [Best/Avg/Worst: O(n log n)]");
 		if (displayOutput) {
 			for (int value : heapArray) {
 				System.out.print(value + " ");
 			}
 		}
 
+		System.out.println("\n-----------------");
+
+		Radixsort.run(radixArray);
+		if (displayOutput) {
+			for (int value : radixArray) {
+				System.out.print(value + " ");
+			}
+		}
+		// this portion of radix sort has overloaded run method, fed maximum
+		System.out.println(" ");
+		Radixsort.run(randomCeiling, radixArrayWithMax);
+		if (displayOutput) {
+			for (int value : radixArrayWithMax) {
+				System.out.print(value + " ");
+			}
+		}
 	}
 
 	public static int[] bubbleSort(int[] array) {
@@ -116,7 +133,7 @@ public class Algorithms {
 		}
 
 		long endTime = System.nanoTime() - startTime;
-		System.out.println("Bubble Sort runtime (ns) = " + endTime);
+		System.out.println("Bubble Sort [Best: O(n), Worst: O(n^2)] runtime (ns) = " + endTime);
 		return array;
 	}
 
@@ -151,7 +168,7 @@ public class Algorithms {
 		}
 
 		long endTime = System.nanoTime() - startTime;
-		System.out.println("Selection Sort runtime (ns) = " + endTime);
+		System.out.println("Selection Sort [Best/Worst: O(n^2)] runtime (ns) = " + endTime);
 		return array;
 	}
 
@@ -160,14 +177,15 @@ public class Algorithms {
 		int innerIdx;
 		int idx;
 		int arrayLength = array.length;
-		
+
 		long startTime = System.nanoTime();
 		for (idx = 1; idx < arrayLength; idx++) {
 			// iterate through the array, happens just once
 			current = array[idx];
 			for (innerIdx = idx; innerIdx > 0; innerIdx--) {
-				//iterate backwards through the previously sorted array with new element
-				if (array[innerIdx] < array[innerIdx - 1]){
+				// iterate backwards through the previously sorted array with
+				// new element
+				if (array[innerIdx] < array[innerIdx - 1]) {
 					array[innerIdx] = array[innerIdx - 1];
 					array[innerIdx - 1] = current;
 				}
@@ -175,7 +193,7 @@ public class Algorithms {
 		}
 
 		long endTime = System.nanoTime() - startTime;
-		System.out.println("Insertion Sort runtime (ns) = " + endTime);
+		System.out.println("Insertion Sort [Best: O(n), Worst: O(n^2)] runtime (ns) = " + endTime);
 		return array;
 	}
 
